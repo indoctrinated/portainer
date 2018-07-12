@@ -1,4 +1,4 @@
-function NetworkViewModel(data) {
+function NetworkViewModel(data, is_system = False) {
   this.Id = data.Id;
   this.Name = data.Name;
   this.Scope = data.Scope;
@@ -7,6 +7,7 @@ function NetworkViewModel(data) {
   this.IPAM = data.IPAM;
   this.Containers = data.Containers;
   this.Options = data.Options;
+  this.IsSystem = is_system;
 
   this.Labels = data.Labels;
   if (this.Labels && this.Labels['com.docker.compose.project']) {
